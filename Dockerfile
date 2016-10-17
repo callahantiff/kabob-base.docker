@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     maven \
     git \
-    unzip
+    unzip \
+    wget
 
 RUN git clone -b kabob.docker http://github.com/bill-baumgartner/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
