@@ -8,17 +8,18 @@
 #
 
 TAX="-t 9606"
-DATASOURCES="HGNC,NCBIGENE_GENEINFO,NCBIGENE_REFSEQUNIPROTCOLLAB,GOA_HUMAN,HP_ANNOTATIONS_ALL_SOURCES
+
+declare -a DATASOURCES=("HGNC,NCBIGENE_GENEINFO,NCBIGENE_REFSEQUNIPROTCOLLAB,GOA_HUMAN,HP_ANNOTATIONS_ALL_SOURCES
 IREFWEB_HUMAN
 REFSEQ_RELEASECATALOG,NCBIGENE_GENE2REFSEQ
 UNIPROT_SWISSPROT
-UNIPROT_IDMAPPING"
+UNIPROT_IDMAPPING")
 
 DID=""
 
-for ds in "$DATASOURCES"
+for ds in "${DATASOURCES[@]}"
 do
     echo "Starting kabob-base container to process: $ds"
-    DID=$DID" "`docker run --rm -d --volumes-from kabob_data ccp/kabob-base:0.1 ./ice-rdf-gen.sh "$TAX" "$ds"`
+    DID=$DID" "`docker run -d --volumes-from kabob_data ccp/kabob-base:0.1 ./ice-rdf-gen.sh "$TAX" "$ds"`
 done
 docker wait $DID
