@@ -18,6 +18,7 @@ DID=""
 
 for ds in "$DATASOURCES"
 do
+    echo "Starting kabob-base container to process: $ds"
     DID=$DID" "`docker run --rm -d --volumes-from kabob_data ccp/kabob-base:0.1 ./ice-rdf-gen.sh "$TAX" "$ds"`
 done
 docker wait $DID
