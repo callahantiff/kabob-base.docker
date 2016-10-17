@@ -24,3 +24,4 @@ do
     COUNTER=$((COUNTER + 1))
 done
 docker wait $DID
+docker rm $DID
