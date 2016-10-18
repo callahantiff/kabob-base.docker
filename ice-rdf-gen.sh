@@ -20,4 +20,5 @@ chmod 755 datasource-rdfizer/scripts/*.sh
     -d /kabob_data/raw \
     -r /kabob_data/rdf \
     $1 \
-    -i $2 
+    -i $2 \
+    | tee /kabob_data/logs/rdf-gen.log.$3
