@@ -17,7 +17,7 @@ RUN git clone -b docker.base https://github.com/bill-baumgartner/kabob ./kabob.g
     mvn clean install -f ./kabob.git/pom.xml && \
     mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
 
-COPY step1_download-ontologies.sh step2a_curl-downloads.sh ice-rdf-gen.sh step2_human-rdf-gen.sh /
+COPY setup.sh step1_download-ontologies.sh step2a_curl-downloads.sh ice-rdf-gen.sh step2_human-rdf-gen.sh /
 
 RUN chmod 755 ./*.sh
 
