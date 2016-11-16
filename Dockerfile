@@ -18,7 +18,7 @@ RUN git clone -b docker.dev.load_request https://github.com/bill-baumgartner/kab
     mvn clean install -f ./kabob.git/pom.xml && \
     mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
 
-COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
+COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh scripts/fix-pr-invalid-xml.sh /
 
 RUN chmod 755 ./*.sh
 
