@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     maven \
     git \
     unzip \
-    wget
+    wget \
+    inotify-tools
 
 RUN git clone -b kabob.docker http://github.com/bill-baumgartner/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
@@ -17,7 +18,7 @@ RUN git clone -b docker.base https://github.com/bill-baumgartner/kabob ./kabob.g
     mvn clean install -f ./kabob.git/pom.xml && \
     mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
 
-COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
+COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh scripts/fix-pr-invalid-xml.sh /
 
 RUN chmod 755 ./*.sh
 
