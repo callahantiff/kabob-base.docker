@@ -18,7 +18,7 @@ RUN git clone --branch add.santos2016 https://github.com/bill-baumgartner/kabob 
     mvn clean install -f ./kabob.git/pom.xml && \
     mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
 
-COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh scripts/fix-pr-invalid-xml.sh /
+COPY scripts/setup.sh scripts/download-ontologies.sh scripts/download-irefweb.sh scripts/download-chembl-rdf.sh scripts/ice-rdf-gen.sh scripts/fix-pr-invalid-xml.sh /
 
 RUN chmod 755 ./*.sh
 
