@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     inotify-tools
 
-RUN git clone --branch kabob.docker_v0.2 http://github.com/bill-baumgartner/datasource ./datasource.git && \
+RUN git clone --branch kabob.docker_v0.2.1 http://github.com/bill-baumgartner/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
 
 RUN git clone --branch kabob.docker_v0.2 https://github.com/bill-baumgartner/kabob ./kabob.git && \
