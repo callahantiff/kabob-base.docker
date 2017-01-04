@@ -2,6 +2,13 @@
 #
 # Download and flatten (resolve imports) ontologies used by KaBOB
 
+ONT_DIR=/kabob_data/ontology
 cd kabob.git
 chmod 755 ./scripts/download/*.sh
-./scripts/download/download-ontologies.sh /kabob_data/ontology_download.log /kabob_data/ontology
+if [ -d "$ONT_DIR" ]; then
+    # clean the ontology directory if it exists
+    rm -rf "$ONT_DIR"
+fi
+mkdir -p "$ONT_DIR"
+
+./scripts/download/download-ontologies.sh /kabob_data/ontology_download.log "$ONT_DIR"
