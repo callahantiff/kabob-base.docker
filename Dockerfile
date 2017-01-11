@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone --branch kabob.docker_v0.2.1 http://github.com/bill-baumgartner/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
 
-RUN git clone --branch kabob.docker_v0.2 https://github.com/bill-baumgartner/kabob ./kabob.git && \
+RUN git clone --branch kabob.docker_v0.2.1 https://github.com/bill-baumgartner/kabob ./kabob.git && \
     mvn clean install -f ./kabob.git/pom.xml && \
     mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
 
