@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     inotify-tools
 
-RUN git clone http://github.com/callahantiff/datasource ./datasource.git && \
+RUN git clone --branch development http://github.com/callahantiff/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
 
 RUN git clone https://github.com/callahantiff/kabob ./kabob.git && \
