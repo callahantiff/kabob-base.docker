@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     inotify-tools
 
 RUN git clone https://github.com/bill-baumgartner/owltools.git ./owltools.git && \
-	mvn clean install -DskipTests -f ./owltools.git/pom.xml
+	mvn clean install -DskipTests -f ./owltools.git/OWLTools-Parent/pom.xml
 
 RUN git clone --branch dev.ice_revision http://github.com/bill-baumgartner/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
