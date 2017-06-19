@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/bill-baumgartner/owltools.git ./owltools.git && \
 	mvn clean install -DskipTests -f ./owltools.git/OWLTools-Parent/pom.xml
 
-RUN git clone --branch dev.ice_revision http://github.com/bill-baumgartner/datasource ./datasource.git && \
+RUN git clone --branch dev.ice_revision http://github.com/UCDenver-ccp/datasource ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
 
 RUN git clone --branch overhaul https://github.com/bill-baumgartner/kabob ./kabob.git && \
