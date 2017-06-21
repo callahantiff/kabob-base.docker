@@ -21,6 +21,10 @@ RUN lein
 RUN git clone https://github.com/bill-baumgartner/owltools.git ./owltools.git && \
 	mvn clean install -DskipTests -f ./owltools.git/OWLTools-Parent/pom.xml
 
+# install the ccp common project
+RUN git clone https://github.com/UCDenver-ccp/common.git ./common.git && \
+    mvn clean install -f ./common.git/pom.xml
+
 # install the datasource project
 RUN git clone --branch dev.ice_revision http://github.com/UCDenver-ccp/datasource.git ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
