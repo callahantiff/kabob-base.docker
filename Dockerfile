@@ -35,7 +35,7 @@ RUN git clone --branch leiningen https://github.com/bill-baumgartner/kr.git ./kr
     lein install && \
     cd ..
 
-COPY /tmp/test.txt /
+COPY test.txt /
 
 # install the kabob project
 RUN git clone --branch overhaul https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
