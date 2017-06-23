@@ -11,4 +11,4 @@ if [ -d "$ONT_DIR" ]; then
 fi
 mkdir -p "$ONT_DIR"
 
-./scripts/download/download-ontologies.sh /kabob_data/ontology_download.log "$ONT_DIR"
+./scripts/download/process-ontologies.sh "$ONT_DIR" mvn

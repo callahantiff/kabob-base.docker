@@ -11,6 +11,10 @@
 # download and process. Multiple data sources should be listed in a
 # comma-delimited string with no spaces.
 #
+# 3) path to Maven binary
+#
+# 4) run counter so that the log file name is unique
+#
 #
 #
 
@@ -21,4 +25,5 @@ chmod 755 datasource-rdfizer/scripts/*.sh
     -r /kabob_data/rdf \
     $1 \
     -i $2 \
-    | tee /kabob_data/logs/rdf-gen.log.$3
+    -x $3 \
+    | tee /kabob_data/logs/rdf-gen.log.$4
