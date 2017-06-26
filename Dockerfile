@@ -32,7 +32,7 @@ RUN git clone --branch dev.ice_revision http://github.com/UCDenver-ccp/datasourc
 COPY do.kr /
 
 # install kr
-RUN git clone --branch leiningen https://github.com/bill-baumgartner/kr.git ./kr.git && \
+RUN git clone --branch leiningen-sesame4 https://github.com/bill-baumgartner/kr.git ./kr.git && \
     cd ./kr.git && \
     lein install && \
     cd ..
@@ -40,7 +40,7 @@ RUN git clone --branch leiningen https://github.com/bill-baumgartner/kr.git ./kr
 COPY do.kabob /
 
 # install the kabob project
-RUN git clone --branch overhaul https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
+RUN git clone --branch overhaul-sesame4 https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
     cd ./kabob.git && \
     ./scripts/download/download-virtuoso-dependencies.sh && \
     lein install && \
