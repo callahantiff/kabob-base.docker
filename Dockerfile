@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     wget \
-    inotify-tools
+    inotify-tools \
+    less
 
 # install Clojure/Leiningen
 RUN wget -q -O /usr/local/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein && \
