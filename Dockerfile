@@ -43,7 +43,7 @@ COPY do.kabob /
 # install the kabob project
 RUN git clone --branch overhaul-sesame4 https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
     cd ./kabob.git && \
-    ./scripts/download/download-virtuoso-dependencies.sh && \
+    ./scripts/download/download-virtuoso-dependencies.sh mvn && \
     lein install && \
     cd .. && \
     mvn clean package -f ./kabob.git/scripts/download/support-scripts_process-ontologies/pom-flatten-ontology.xml
