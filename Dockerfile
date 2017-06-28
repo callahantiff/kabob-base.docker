@@ -30,8 +30,6 @@ RUN git clone https://github.com/UCDenver-ccp/common.git ./common.git && \
 RUN git clone --branch dev.ice_revision http://github.com/UCDenver-ccp/datasource.git ./datasource.git && \
     mvn clean install -f ./datasource.git/pom.xml
 
-COPY do.kr /
-
 # install kr
 RUN git clone --branch leiningen-sesame4 https://github.com/bill-baumgartner/kr.git ./kr.git && \
     cd ./kr.git && \
