@@ -48,7 +48,7 @@ RUN git clone --branch overhaul-sesame4 https://github.com/bill-baumgartner/kabo
     cd .. && \
     mvn clean package -f ./kabob.git/scripts/download/support-scripts_process-ontologies/pom-flatten-ontology.xml
 
-COPY scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
+COPY scripts/download-single-ontology.sh scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
 
 RUN chmod 755 ./*.sh
 
