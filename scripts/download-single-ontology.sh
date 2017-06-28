@@ -6,4 +6,4 @@ ONT_DIR=/kabob_data/ontology
 cd kabob.git
 chmod 755 ./scripts/download/*.sh
 
-.//scripts/download/process-single-ontology.sh "$ONT_DIR" mvn $1
+./scripts/download/process-single-ontology.sh "$ONT_DIR" mvn $1
