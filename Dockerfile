@@ -39,7 +39,7 @@ RUN git clone --branch leiningen-sesame4 https://github.com/bill-baumgartner/kr.
 COPY do.kabob /
 
 # install the kabob project
-RUN git clone --branch overhaul-sesame4 https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
+RUN git clone https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
     cd ./kabob.git && \
     ./scripts/download/download-virtuoso-dependencies.sh mvn && \
     lein install && \
