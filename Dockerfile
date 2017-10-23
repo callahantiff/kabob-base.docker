@@ -49,7 +49,7 @@ RUN git clone --branch leiningen-sesame4 https://github.com/bill-baumgartner/kr.
 COPY do.kabob /
 
 # install the kabob project
-RUN git clone https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
+RUN git clone https://github.com/callahantiff/kabob.git ./kabob.git && \
     cd ./kabob.git && \
     ./scripts/download/download-virtuoso-dependencies.sh mvn && \
     lein install && \
@@ -60,6 +60,7 @@ RUN git clone https://github.com/bill-baumgartner/kabob.git ./kabob.git && \
 COPY scripts/download-single-ontology.sh scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
 
 RUN chmod 755 ./*.sh
+
 
 
 
