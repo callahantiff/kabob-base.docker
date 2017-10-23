@@ -12,14 +12,6 @@ RUN apt-get update && apt-get install -y \
     inotify-tools \
     less
 
-<<<<<<< HEAD
-RUN git clone --branch development http://github.com/callahantiff/datasource ./datasource.git && \
-    mvn clean install -f ./datasource.git/pom.xml
-
-RUN git clone https://github.com/callahantiff/kabob ./kabob.git && \
-    mvn clean install -f ./kabob.git/pom.xml && \
-    mvn clean package -f ./kabob.git/scripts/download/pom-flatten-ontology.xml    
-=======
 # install Clojure/Leiningen
 RUN wget -q -O /usr/local/bin/lein https://raw.github.com/technomancy/leiningen/stable/bin/lein && \
     chmod +x /usr/local/bin/lein
@@ -55,7 +47,6 @@ RUN git clone https://github.com/callahantiff/kabob.git ./kabob.git && \
     lein install && \
     cd .. && \
     mvn clean package -f ./kabob.git/scripts/download/support-scripts_process-ontologies/pom-flatten-ontology.xml
->>>>>>> bill-baumgartner/master
 
 COPY scripts/download-single-ontology.sh scripts/setup.sh scripts/download-ontologies.sh scripts/other-downloads.sh scripts/ice-rdf-gen.sh /
 
